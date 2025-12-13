@@ -15,7 +15,7 @@ const Work = () => {
       id: 2,
       title: 'Dodge Game',
       description: 'A fast-paced challenge where players must avoid incoming attacks to survive and score points.',
-      tags: ['React Native', 'Firebase', 'Design'],
+      tags: ['React', 'Vite'],
       image: '📱',
       link: 'https://dodge-game-lac.vercel.app/',
       github: 'https://github.com/leooladimu/dodgeGame'

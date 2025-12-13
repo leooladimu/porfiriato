@@ -13,10 +13,12 @@ const Work = () => {
     },
     {
       id: 2,
-      title: 'Project Two',
-      description: 'An elegant mobile-first experience with smooth animations.',
+      title: 'Dodge Game',
+      description: 'A fast-paced challenge where players must avoid incoming attacks to survive and score points.',
       tags: ['React Native', 'Firebase', 'Design'],
-      image: '📱'
+      image: '📱',
+      link: 'https://dodge-game-lac.vercel.app/',
+      github: 'https://github.com/leooladimu/dodgeGame'
     },
     {
       id: 3,

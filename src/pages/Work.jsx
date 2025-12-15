@@ -8,7 +8,7 @@ const Work = () => {
       description: 'A full-stack streaming platform with user authentication, content browsing, and video playback capabilities.',
       tags: ['MongoDB', 'Express.js', 'React', 'Node.js'],
       image: '📽️',
-      link: 'https://frontend-three-alpha-14.vercel.app/',
+      link: 'https://oleoflix.oleo.dev/',
       github: 'https://github.com/leooladimu/streamingPlatform'
     },
     {
@@ -17,7 +17,7 @@ const Work = () => {
       description: 'A fast-paced challenge where players must avoid incoming attacks to survive and score points.',
       tags: ['React', 'Vite'],
       image: '🕹️',
-      link: 'https://dodge-game-lac.vercel.app/',
+      link: 'https://dodgegame.oleo.dev',
       github: 'https://github.com/leooladimu/dodgeGame'
     },
     {

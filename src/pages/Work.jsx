@@ -29,27 +29,6 @@ const Work = () => {
       link: 'https://fincoach.oleo.dev/',
       github: 'https://github.com/leooladimu/finCoach'
 
-    },
-    {
-      id: 4,
-      title: 'Project Four',
-      description: 'E-commerce platform with seamless user experience.',
-      tags: ['Next.js', 'Stripe', 'PostgreSQL'],
-      image: '🛍️'
-    },
-    {
-      id: 5,
-      title: 'Project Five',
-      description: 'Generative art installation combining code and creativity.',
-      tags: ['Canvas', 'WebGL', 'Creative'],
-      image: '✨'
-    },
-    {
-      id: 6,
-      title: 'Project Six',
-      description: 'Real-time collaboration tool for distributed teams.',
-      tags: ['WebSocket', 'React', 'Express'],
-      image: '🚀'
     }
   ];
 

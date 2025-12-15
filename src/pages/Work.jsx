@@ -22,10 +22,13 @@ const Work = () => {
     },
     {
       id: 3,
-      title: 'Project Three',
-      description: 'Interactive data visualization bringing complex information to life.',
-      tags: ['D3.js', 'Python', 'AI'],
-      image: '📊'
+      title: 'finCoach',
+      description: 'Personal finance coaching with personality-based recommendations',
+      tags: ['Next.js', 'TypeScript', 'Vercel KV', 'Clerk'],
+      image: '💰',
+      link: 'https://fincoach.oleo.dev/',
+      github: 'https://github.com/leooladimu/finCoach'
+
     },
     {
       id: 4,

@@ -8,12 +8,26 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+  const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert("Thank you for your message! I'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json();
+        alert(data.error || 'Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   const handleChange = (e) => {

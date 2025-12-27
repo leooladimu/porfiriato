@@ -1,39 +1,39 @@
-import { useState } from 'react';
-import './Contact.css';
+import { useState } from "react";
+import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-  const response = await fetch('http://localhost:3001/api/contact', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         alert("Thank you for your message! I'll get back to you soon.");
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         const data = await response.json();
-        alert(data.error || 'Failed to send message. Please try again later.');
+        alert(data.error || "Failed to send message. Please try again later.");
       }
     } catch (error) {
-      alert('Failed to send message. Please try again later.');
+      alert("Failed to send message. Please try again later.");
     }
   };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -41,27 +41,38 @@ const Contact = () => {
     <div className="page-content">
       <div className="page-hero">
         <h1>Get In Touch</h1>
-        
+
         <div className="contact-container">
           <div className="contact-info">
             <h2>Let's Connect</h2>
             <p>
-              Have a project in mind or just want to say hello? 
-              I'd love to hear from you.
+              Have a project in mind or just want to say hello? I'd love to hear
+              from you.
             </p>
-            
+
             <div className="contact-methods">
               <div className="contact-method">
                 <h3>Email</h3>
                 <a href="mailto:leo@oleo.dev">leo@oleo.dev</a>
               </div>
-              
+
               <div className="contact-method">
                 <h3>Social</h3>
                 <div className="social-links">
-                  <a href="https://github.com/leooladimu" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a href="https://www.linkedin.com/in/leo-%E1%BB%8Dl%C3%A1dim%C3%BA-ab576a395/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                  <a
+                    href="https://github.com/leooladimu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/leo-%E1%BB%8Dl%C3%A1dim%C3%BA-ab576a395/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>
@@ -104,7 +115,9 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn">
+              Send Message
+            </button>
           </form>
         </div>
       </div>

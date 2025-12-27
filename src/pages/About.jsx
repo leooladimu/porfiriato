@@ -20,7 +20,7 @@ I bring a perspective most developers don't—I understand what it means to star
             <div className="skills-grid">
               <div className="skill-card">
                 <h3>Development</h3>
-                <p>  MongoDB, Express.js, React.js, Node.js</p>
+                <p>  Next.js, TypeScript, MongoDB, Express.js, React.js, Node.js</p>
               </div>
               <div className="skill-card">
                 <h3>Design</h3>

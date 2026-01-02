@@ -5,6 +5,16 @@ const About = () => {
     <div className="page-content">
       <div className="page-hero">
         <h1>About Me</h1>
+        
+        <div className="about-header">
+          <img 
+            src="/images/profile-about.jpg" 
+            alt="Leo Ọládimú" 
+            className="about-photo"
+            loading="lazy"
+          />
+        </div>
+
         <div className="about-content">
           <div className="about-section">
             <h2>Background</h2>

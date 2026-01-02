@@ -13,6 +13,40 @@
   border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.nav-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-avatar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 30%, rgba(26, 26, 46, 0.3) 60%, rgba(26, 26, 46, 0.9) 100%);
+  pointer-events: none;
+}
+
+.nav-avatar:hover {
+  border-color: #FFD700;
+  transform: scale(1.05);
+}
+
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 300;

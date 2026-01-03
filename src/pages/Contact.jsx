@@ -57,7 +57,7 @@ const Contact = () => {
               </div>
 
               <div className="contact-method">
-                <h3>Social</h3>
+                <h3>Socials</h3>
                 <div className="social-links">
                   <a
                     href="https://github.com/leooladimu"
@@ -67,7 +67,7 @@ const Contact = () => {
                     GitHub
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/leo-%E1%BB%8Dl%C3%A1dim%C3%BA-ab576a395/"
+                    href="https://www.linkedin.com/in/leo-oladimu/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

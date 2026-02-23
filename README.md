@@ -16,12 +16,18 @@ Visit the live site at [oleo.dev](https://oleo.dev)
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React 18
+- **Frontend Framework:** React 19
 - **Build Tool:** Vite
 - **Routing:** React Router DOM
 - **Styling:** CSS3 with custom animations
 - **Deployment:** Vercel
 - **Version Control:** Git & GitHub
+
+## 🗂️ Featured Projects
+
+- **[geoSync](https://geosync.oleo.dev/)** — A science-grounded relationship compatibility platform utilizing chronobiology research (MERN stack)
+- **[Dodge Game](https://dodgegame.oleo.dev)** — A fast-paced game where players avoid incoming attacks to survive and score points (React, Vite)
+- **[Ọleoflix](https://oleoflix.oleo.dev/)** — A full-stack streaming platform with authentication, content browsing, and video playback (MERN stack)
 
 ## 📁 Project Structure
 

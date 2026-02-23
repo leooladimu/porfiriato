@@ -4,13 +4,13 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: "finCoach",
+      title: "geoSync",
       description:
-        "Personal finance coaching with personality-based recommendations",
-      tags: ["Next.js", "TypeScript", "Vercel KV", "Clerk"],
-      image: "💰",
-      link: "https://fincoach.oleo.dev/",
-      github: "https://github.com/leooladimu/finCoach",
+        "A science-grounded relationship compatibility platform that utilizes chronobiology research to provide users with personalized insights and recommendations for improving their relationships.",
+      tags: ["MongoDB", "Express.js", "React ", "Node.js"],
+      image: "♁",
+      link: "https://geosync.oleo.dev/",
+      github: "https://github.com/leooladimu/geoSync",
     },
     {
       id: 2,

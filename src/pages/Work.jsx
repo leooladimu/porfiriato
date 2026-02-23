@@ -12,6 +12,7 @@ const Work = () => {
       link: "https://geosync.oleo.dev/",
       github: "https://github.com/leooladimu/geoSync",
     },
+
     {
       id: 2,
       title: "Dodge Game",
@@ -31,6 +32,16 @@ const Work = () => {
       image: "📽️",
       link: "https://oleoflix.oleo.dev/",
       github: "https://github.com/leooladimu/streamingPlatform",
+    },
+    {
+      id: 4,
+      title: "finCoach",
+      description:
+        "Personal finance coaching with personality-based recommendations",
+      tags: ["Next.js", "TypeScript", "Vercel KV", "Clerk"],
+      image: "💰",
+      link: "https://fincoach.oleo.dev/",
+      github: "https://github.com/leooladimu/finCoach",
     },
   ];
 

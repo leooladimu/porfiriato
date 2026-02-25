@@ -1,15 +1,15 @@
-import './About.css';
+import "./About.css";
 
 const About = () => {
   return (
     <div className="page-content">
       <div className="page-hero">
         <h1>About Me</h1>
-        
+
         <div className="about-header">
-          <img 
-            src="/images/profile-about1.jpg" 
-            alt="Leo Ọládimú" 
+          <img
+            src="/images/profile-about1.jpg"
+            alt="Leo Ọládimú"
             className="about-photo"
             loading="lazy"
           />
@@ -19,9 +19,20 @@ const About = () => {
           <div className="about-section">
             <h2>Background</h2>
             <p>
-I'm Leo Ọládimú, a developer and designer passionate about creating elegant digital experiences. My work sits at the intersection of technology, art, and human connection.
-My path to software engineering has been unconventional. I've lived a life that taught me about resilience, consequence, and the power of second chances—lessons that shape how I approach problem-solving and collaboration. After making the decision to rebuild my life from the ground up, I pursued technical training at MIT and discovered that code offers something I'd been searching for: the ability to create something meaningful that impacts real people.
-I bring a perspective most developers don't—I understand what it means to start over, to prove yourself when the odds are stacked against you, and to commit fully to a new direction. That hunger and discipline drive everything I build.
+              I'm Leo Ọládimú, a developer and designer passionate about
+              creating elegant digital experiences. My work sits at the
+              intersection of technology, art, and human connection. My path to
+              software engineering has been unconventional. I've lived a life
+              that taught me about resilience, consequence, and the power of
+              second chances—lessons that shape how I approach problem-solving
+              and collaboration. After making the decision to rebuild my life
+              from the ground up, I pursued technical training at MIT and
+              discovered that code offers something I'd been searching for: the
+              ability to create something meaningful that impacts real people. I
+              bring a perspective most developers don't—I understand what it
+              means to start over, to prove yourself when the odds are stacked
+              against you, and to commit fully to a new direction. That hunger
+              and discipline drive everything I build.
             </p>
           </div>
 
@@ -30,7 +41,7 @@ I bring a perspective most developers don't—I understand what it means to star
             <div className="skills-grid">
               <div className="skill-card">
                 <h3>Development</h3>
-                <p>  Next.js, TypeScript, MERN</p>
+                <p> Next.js, TypeScript, MERN</p>
               </div>
               <div className="skill-card">
                 <h3>Design</h3>
@@ -46,9 +57,10 @@ I bring a perspective most developers don't—I understand what it means to star
           <div className="about-section">
             <h2>Philosophy</h2>
             <p>
-              I believe technology should be both powerful and beautiful. 
-              Every project is an opportunity to blend functionality with artistry, 
-              creating experiences that resonate on both practical and emotional levels.
+              I believe technology should be both powerful and beautiful. Every
+              project is an opportunity to blend functionality with artistry,
+              creating experiences that resonate on both practical and emotional
+              levels.
             </p>
           </div>
         </div>

@@ -1,16 +1,18 @@
-import { Link } from 'react-router-dom';
-import './Navigation.css';
+import { Link } from "react-router-dom";
+import "./Navigation.css";
 
 const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-brand">
-        <img 
-          src="/images/profile-nav.jpeg" 
-          alt="Leo Ọládimú" 
+        <img
+          src="/images/profile-nav.jpeg"
+          alt="Leo Ọládimú"
           className="nav-avatar"
         />
-        <Link to="/" className="nav-logo">Leo Ọládimú</Link>
+        <Link to="/" className="nav-logo">
+          Leo Ọládimú
+        </Link>
       </div>
       <div className="nav-links">
         <Link to="/">Home</Link>

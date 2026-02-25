@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import './Home.css';
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -8,8 +8,9 @@ const Home = () => {
         <h1>Leo Ọládimú</h1>
         <p className="subtitle">Developer • Designer • Creator</p>
         <p className="bio">
-          Crafting elegant solutions at the intersection of technology and artistry. 
-          Passionate about building meaningful experiences that inspire and connect.
+          Crafting elegant solutions at the intersection of technology and
+          artistry. Passionate about building meaningful experiences that
+          inspire and connect.
         </p>
         <div className="links">
           <Link to="/work">View Work</Link>

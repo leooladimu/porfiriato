@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 const Kaleidoscope = () => {
   const canvasRef = useRef(null);
@@ -7,15 +7,15 @@ const Kaleidoscope = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let w = (canvas.width = window.innerWidth);
     let h = (canvas.height = window.innerHeight);
-    
+
     // Check if we're on the About page and adjust center accordingly
-    const isAboutPage = location.pathname === '/about';
+    const isAboutPage = location.pathname === "/about";
     const centerOffsetY = isAboutPage ? -100 : 0; // Shift up by 100px on About page
     const centerOffsetX = isAboutPage ? -5 : 0; // Shift left by 5px on About page
-    
+
     let w2 = w / 2 + centerOffsetX,
       h2 = h / 2 + centerOffsetY;
     const { PI, sin, cos } = Math;
@@ -37,7 +37,7 @@ const Kaleidoscope = () => {
     const handleResize = () => {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-      const isAboutPage = location.pathname === '/about';
+      const isAboutPage = location.pathname === "/about";
       const centerOffsetY = isAboutPage ? -100 : 0;
       const centerOffsetX = isAboutPage ? -5 : 0;
       w2 = w / 2 + centerOffsetX;
@@ -59,13 +59,13 @@ const Kaleidoscope = () => {
         -1,
         -1 /*radius * sin(0)*/,
         radius * sin(deltaAngle),
-        radius * sin(deltaAngle / 2)
+        radius * sin(deltaAngle / 2),
       ];
       let y = [
         -1,
         radius /*radius * cos(0)*/,
         radius * cos(deltaAngle),
-        radius * cos(deltaAngle / 2)
+        radius * cos(deltaAngle / 2),
       ];
 
       for (let i = 0; i < slices; i++) {
@@ -109,28 +109,28 @@ const Kaleidoscope = () => {
 
     const setup = () => {
       img = new Image();
-      img.src = '/icon-image.jpeg';
+      img.src = "/icon-image.jpeg";
 
       img.onload = function () {
-        pattern = ctx.createPattern(img, 'repeat');
+        pattern = ctx.createPattern(img, "repeat");
         loop();
       };
 
       img.onerror = function () {
-        console.error('Failed to load image');
+        console.error("Failed to load image");
       };
     };
 
-    canvas.addEventListener('click', handleClick);
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener("click", handleClick);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
 
     setup();
 
     return () => {
-      canvas.removeEventListener('click', handleClick);
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener("click", handleClick);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
       if (animationId) {
         cancelAnimationFrame(animationId);
       }
@@ -141,12 +141,12 @@ const Kaleidoscope = () => {
     <canvas
       ref={canvasRef}
       style={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
         opacity: 0.65,
-        filter: 'blur(1px) brightness(1.5)',
-        zIndex: 0
+        filter: "blur(1px) brightness(1.5)",
+        zIndex: 0,
       }}
     />
   );

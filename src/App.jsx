@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Kaleidoscope from './components/Kaleidoscope';
-import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Work from './pages/Work';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Kaleidoscope from "./components/Kaleidoscope";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Work from "./pages/Work";
+import "./App.css";
 
 function App() {
   return (

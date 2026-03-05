@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            width: 1200px; 
+            height: 630px; 
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kaleidoscope-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+        h1 {
+            font-size: 72px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font-size: 32px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .feature {
+            font-size: 18px;
+            color: #b0b0b0;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .domain {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            font-size: 28px;
+            color: #4a9eff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container">
+        <canvas class="kaleidoscope-bg" id="kaleidoscope"></canvas>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Leo Ọládimú</h1>
+            <div class="subtitle">Full-Stack Developer & Creative Technologist</div>
+            <div class="features">
+                <div class="feature">React</div>
+                <div class="feature">MERN Stack</div>
+                <div class="feature">Byzantine Design</div>
+            </div>
+        </div>
+        <div class="domain">oleo.dev</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('kaleidoscope');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 1200;
+        canvas.height = 630;
+
+        // Simple geometric pattern inspired by Byzantine art
+        function drawPattern() {
+            const centerX = 300;
+            const centerY = 315;
+            const segments = 8;
+            
+            for (let i = 0; i < segments; i++) {
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate((Math.PI * 2 * i) / segments);
+                
+                // Draw ornate shapes
+                ctx.fillStyle = `hsla(${210 + i * 15}, 70%, 60%, 0.3)`;
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(150, -50);
+                ctx.lineTo(180, 0);
+                ctx.lineTo(150, 50);
+                ctx.closePath();
+                ctx.fill();
+                
+                ctx.strokeStyle = `hsla(${210 + i * 15}, 80%, 70%, 0.5)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.restore();
+            }
+        }
+
+        drawPattern();
+    </script>
+</body>
+</html>

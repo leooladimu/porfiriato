@@ -117,7 +117,7 @@ const Kaleidoscope = () => {
       };
 
       img.onerror = function () {
-        console.error("Failed to load image");
+        console.error("Failed to load this image");
       };
     };
 

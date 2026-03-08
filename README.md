@@ -1,10 +1,10 @@
 # Porfiriato Portfolio
 
-A modern, elegant portfolio website featuring a mesmerizing kaleidoscope background animation built with React and deployed on Vercel.
+A modern, elegant portfolio website featuring a kaleidoscopic background animation built with React and deployed on Vercel.
 
 ## ✨ Features
 
-- **Interactive Kaleidoscope Background** - Dynamic canvas animation using Byzantine iconography
+- **Interactive Kaleidoscopic Background** - Dynamic canvas animation 
 - **Multi-page Navigation** - Smooth routing with React Router
 - **Responsive Design** - Beautiful on all devices
 - **Modern Tech Stack** - Built with React, Vite, and deployed on Vercel
@@ -34,8 +34,8 @@ Visit the live site at [oleo.dev](https://oleo.dev)
 \`\`\`
 porfiriato/
 ├── public/
-│   ├── favicon.jpeg          # Saint Moses icon favicon
-│   └── icon-image.jpeg       # Theotokos icon for kaleidoscope
+│   ├── favicon.jpeg          # Yorùbá favicon 
+│   └── icon-image.jpeg       # Technocratic kaleidoscope
 ├── src/
 │   ├── components/
 │   │   ├── Kaleidoscope.jsx  # Canvas animation component
@@ -112,7 +112,7 @@ git push
 
 ## 🎭 Design Philosophy
 
-The portfolio combines modern web technologies with traditional Byzantine iconography, creating a unique visual experience that bridges ancient artistry with contemporary design. The kaleidoscope effect transforms sacred imagery into an ever-shifting pattern, symbolizing the intersection of tradition and innovation.
+This portfolio is built on a single conviction: that technology and beauty are not competing values. Every decision — from the kaleidoscopic background to the dark, deliberate color palette — reflects a belief that digital experiences should reward attention. The animation isn't decoration; it's an invitation. The minimalism isn't restraint; it's discipline. Like the work it represents, this site sits at the intersection of the technical and the human — a space where craftsmanship matters as much as capability.
 
 ## 📄 License
 

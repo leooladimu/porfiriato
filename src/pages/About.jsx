@@ -8,7 +8,7 @@ const About = () => {
 
         <div className="about-header">
           <img
-            src="/images/profile-about1.jpg"
+            src="/images/profile-about.jpeg"
             alt="Leo Ọládimú"
             className="about-photo"
             loading="lazy"

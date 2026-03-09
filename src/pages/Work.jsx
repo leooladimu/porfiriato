@@ -7,7 +7,7 @@ const Work = () => {
       title: "geoSync",
       description:
         "A science-grounded relationship compatibility platform that utilizes chronobiology research to provide users with personalized insights and recommendations for improving their relationships.",
-      tags: ["Next.js", "PostgreSQL", "Prisma"],
+      tags: ["Next.js", "PostgreSQL", "Prisma", "TypeScript"],
       image: "♁",
       link: "https://geosync.oleo.dev/",
       github: "https://github.com/leooladimu/geosync-next",

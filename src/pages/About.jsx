@@ -19,7 +19,7 @@ const About = () => {
           <div className="about-section">
             <h2>Background</h2>
             <p>
-              I'm Leo Ọládimú, a developer and designer passionate about
+              I'm Leo Ọládimú, a developer and designer who's passionate about
               creating elegant digital experiences. My work sits at the
               intersection of technology, art, and human connection. My path to
               software engineering has been unconventional. I've lived a life

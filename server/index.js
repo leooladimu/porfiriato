@@ -1,12 +1,16 @@
 import express from "express";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import cors from "cors";
 import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 
-dotenv.config();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: resolve(__dirname, "..", ".env") });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
 app.use(express.json());
@@ -20,32 +24,16 @@ app.post("/api/contact", async (req, res) => {
     return res.status(400).json({ error: "All fields are required." });
   }
 
-  console.log("Creating transporter with email:", process.env.EMAIL_USER);
-
   try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      debug: true, // This will output SMTP traffic
-      logger: true, // This will output debug logs
-    });
+    console.log("Sending email via Resend...");
 
-    console.log("Sending email...");
+    const fromAddress = process.env.EMAIL_FROM || "Contact Form <onboarding@resend.dev>";
 
-    const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
+    const { data, error } = await resend.emails.send({
+      from: fromAddress,
       replyTo: email,
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
       subject: `Contact from ${name} (${email})`,
-      text: message,
       html: `
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
@@ -53,19 +41,17 @@ app.post("/api/contact", async (req, res) => {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
-    };
+    });
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Message sent: %s", info.messageId);
+    if (error) {
+      console.error("Resend error:", error);
+      return res.status(500).json({ error: "Failed to send email.", details: error.message });
+    }
 
+    console.log("Message sent:", data.id);
     res.json({ success: true });
   } catch (error) {
-    console.error("Error sending email:", {
-      message: error.message,
-      code: error.code,
-      response: error.response,
-      stack: error.stack,
-    });
+    console.error("Error sending email:", error);
     res.status(500).json({
       error: "Failed to send email.",
       details: error.message,

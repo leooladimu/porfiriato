@@ -12,17 +12,6 @@ const Work = () => {
       link: "https://geosync.oleo.dev/",
       github: "https://github.com/leooladimu/geosync-next",
     },
-
-    {
-      id: 2,
-      title: "Dodge Game",
-      description:
-        "A fast-paced challenge where players must avoid incoming attacks to survive and score points.",
-      tags: ["React", "Vite"],
-      image: "🕹️",
-      link: "https://dodgegame.oleo.dev",
-      github: "https://github.com/leooladimu/dodgeGame",
-    },
     {
       id: 3,
       title: "Ọleoflix",

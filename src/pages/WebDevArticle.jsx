@@ -51,7 +51,7 @@ const WebDevArticle = () => {
           <p>
             I build websites with SEO best practices baked in from day one. Clean code, optimized performance, proper
             header structures, and secure HTTPS connections all contribute to better visibility in search results —
-            helping local customers in the Twentynine Palms area and beyond find your business with ease.
+            helping local customers in the Hi-Desert and beyond find your business with ease.
           </p>
 
           <h2 id="custom-software">Custom software solutions that grow with you</h2>
@@ -68,7 +68,7 @@ const WebDevArticle = () => {
 
           <h2 id="why-leo">Why work with me?</h2>
           <p>
-            Located right here in Twentynine Palms, CA, I bring personalized service and technical expertise to every
+            Located in Wonder Valley, CA, I bring personalized service and technical expertise to every
             project. I take the time to understand your goals and deliver web solutions that are beautiful, functional,
             and built to perform.
           </p>

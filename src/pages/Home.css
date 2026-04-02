@@ -72,6 +72,18 @@
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
+.links a:first-child {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #1a1a2e;
+  border-color: transparent;
+  font-weight: 400;
+}
+
+.links a:first-child:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
 .scroll-hint {
   position: absolute;
   bottom: 2rem;

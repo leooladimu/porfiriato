@@ -13,6 +13,7 @@ const Home = () => {
           inspire and connect.
         </p>
         <div className="links">
+          <Link to="/resources/web-development">Why SEO Matters</Link>
           <Link to="/work">View Work</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>

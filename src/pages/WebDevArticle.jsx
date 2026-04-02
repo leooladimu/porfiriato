@@ -10,7 +10,7 @@ const WebDevArticle = () => {
         <div className="article-hero-meta">
           <span>Leo Ọládimú</span>
           <span className="article-meta-sep">|</span>
-          <span>Twentynine Palms, CA</span>
+          <span>Wonder Valley, CA</span>
           <span className="article-meta-sep">|</span>
           <span>5 min read</span>
         </div>

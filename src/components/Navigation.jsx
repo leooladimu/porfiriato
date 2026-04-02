@@ -16,7 +16,7 @@ const Navigation = () => {
       </div>
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/work">View Work</Link>
+        <Link to="/work">Recent Work</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/resources/web-development">Why SEO Matters</Link>

@@ -8,7 +8,7 @@ const Work = () => {
       description:
         "AI-powered SEO content platform built for local small businesses. Generates keyword-targeted blog posts and landing pages using the Anthropic API — helping businesses in markets like the Hi-Desert get found on Google without hiring an agency. $40/month SaaS.",
       tags: ["Next.js", "PostgreSQL", "Prisma", "Clerk", "Stripe", "Anthropic API"],
-      image: "🐇",
+      image: "/images/jackrabbit.png",
       link: "https://postrabbit.oleo.dev",
       github: null,
     },
@@ -35,7 +35,13 @@ const Work = () => {
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <div className="project-icon">{project.image}</div>
+              <div className="project-icon">
+                {project.image.startsWith("/") ? (
+                  <img src={project.image} alt={project.title} className="project-icon-img" />
+                ) : (
+                  project.image
+                )}
+              </div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="project-tags">

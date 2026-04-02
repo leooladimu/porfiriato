@@ -14,7 +14,7 @@ const Home = () => {
         </p>
         <div className="links">
           <Link to="/resources/web-development">Why SEO Matters</Link>
-          <Link to="/work">View Work</Link>
+          <Link to="/work">Recent Work</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </div>

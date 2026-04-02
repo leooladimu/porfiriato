@@ -19,6 +19,7 @@ const Navigation = () => {
         <Link to="/work">View Work</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/resources/web-development">Why SEO Matters</Link>
       </div>
     </nav>
   );

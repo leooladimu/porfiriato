@@ -91,7 +91,7 @@ const WebDevArticle = () => {
 
           <div className="sidebar-cta">
             <h3>Ready to build something great?</h3>
-            <p>Based in Twentynine Palms. Serving the Hi-Desert and beyond.</p>
+            <p>Based in Wonder Valley, CA. Serving the Hi-Desert and beyond.</p>
             <Link to="/contact" className="article-btn">Get in touch</Link>
           </div>
         </aside>

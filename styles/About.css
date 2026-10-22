@@ -149,7 +149,7 @@
 
 @media (max-width: 768px) {
   .page-content {
-    padding: 6rem 1.5rem 2rem;
+    padding: 8rem 1.5rem 2rem; /* clears the two-row mobile nav */
   }
 
   .page-hero h1 {

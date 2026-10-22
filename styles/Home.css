@@ -139,6 +139,10 @@
 }
 
 @media (max-width: 768px) {
+  .content {
+    padding-top: 8rem; /* clears the two-row mobile nav */
+  }
+
   .hero h1 {
     font-size: 2.5rem;
   }

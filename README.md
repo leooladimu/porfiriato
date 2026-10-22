@@ -1,13 +1,13 @@
 # Porfiriato Portfolio
 
-A modern, elegant portfolio website featuring a kaleidoscopic background animation built with React and deployed on Vercel.
+A modern, elegant portfolio website featuring a kaleidoscopic background animation built with Next.js and deployed on Vercel.
 
 ## ✨ Features
 
 - **Interactive Kaleidoscopic Background** - Dynamic canvas animation 
-- **Multi-page Navigation** - Smooth routing with React Router
+- **Multi-page Navigation** - Statically generated routes with per-page metadata, JSON-LD, sitemap and robots
 - **Responsive Design** - Beautiful on all devices
-- **Modern Tech Stack** - Built with React, Vite, and deployed on Vercel
+- **Modern Tech Stack** - Built with Next.js, React, and deployed on Vercel
 - **Auto-deployment** - Push to GitHub, automatically deploys to production
 
 ## 🚀 Live Site
@@ -16,9 +16,8 @@ Visit the live site at [oleo.dev](https://oleo.dev)
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React 19
-- **Build Tool:** Vite
-- **Routing:** React Router DOM
+- **Framework:** Next.js (App Router, TypeScript)
+- **UI:** React 19
 - **Styling:** CSS3 with custom animations
 - **Deployment:** Vercel
 - **Version Control:** Git & GitHub

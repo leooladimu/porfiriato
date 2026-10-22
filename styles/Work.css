@@ -46,6 +46,7 @@
   vertical-align: middle;
 }
 
+.project-card h2,
 .project-card h3 {
   font-size: 1.5rem;
   font-weight: 300;
@@ -61,6 +62,7 @@
 }
 
 .project-tags {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -77,6 +79,8 @@
 }
 
 .view-project-btn {
+  display: inline-block;
+  text-decoration: none;
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
   background: transparent;
@@ -95,6 +99,26 @@
   color: #1a1a2e;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.case-study dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFA500;
+  margin-top: 0.8rem;
+}
+
+.case-study dd {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {

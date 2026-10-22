@@ -1,0 +1,26 @@
+# Leo Ọládimú (Leo Oladimu) — oleo.dev
+
+> Leo Ọládimú is a Full-Stack & AI Engineer based in Southern California (Wonder Valley), working remotely. He builds production SaaS and AI features with Next.js, TypeScript, PostgreSQL/Prisma, Clerk, Stripe and the Anthropic API. He is open to full-time AI and full-stack roles and takes freelance projects from small businesses.
+
+## Services
+- Full-stack web applications and SaaS (Next.js, TypeScript, Node, PostgreSQL, Prisma)
+- AI features built on the Anthropic API, with validation, retries and cost controls
+- Authentication and billing (Clerk, Stripe)
+- Custom websites for small businesses, built for speed and search visibility
+- Mobile apps with React Native and Expo
+
+## Projects
+- postRabbit (https://postrabbit.oleo.dev): AI-powered SEO content platform for local small businesses. Built solo. Next.js, PostgreSQL, Prisma, Clerk, Stripe, Anthropic API, Fly. $40/month subscription.
+- RealLife: gamified digital-wellness mobile app (React Native/Expo) built for a client. Rewards less screen time and more real-world activity through daily challenges, XP and streaks. Delivered via TestFlight; not yet publicly released.
+- geoSync (https://geosync.oleo.dev/): relationship compatibility platform based on chronobiology research. Next.js, PostgreSQL, Prisma.
+
+## Pages
+- [Home](https://www.oleo.dev/): overview
+- [Work](https://www.oleo.dev/work): case studies
+- [About](https://www.oleo.dev/about): background and skills
+- [Contact](https://www.oleo.dev/contact): contact form, leo@oleo.dev
+- [Why web development and SEO matter](https://www.oleo.dev/resources/web-development): article for small business owners
+
+## Links
+- LinkedIn: https://www.linkedin.com/in/oleodev/
+- GitHub: https://github.com/leooladimu

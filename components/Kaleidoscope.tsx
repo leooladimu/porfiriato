@@ -1,18 +1,22 @@
+"use client";
+
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 const Kaleidoscope = () => {
-  const canvasRef = useRef(null);
-  const location = useLocation();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
     let w = (canvas.width = window.innerWidth);
     let h = (canvas.height = window.innerHeight);
 
     // Check if we're on the About page and adjust center accordingly
-    const isAboutPage = location.pathname === "/about";
+    const isAboutPage = pathname === "/about";
     const centerOffsetY = isAboutPage ? -100 : 0; // Shift up by 100px on About page
     const centerOffsetX = isAboutPage ? -5 : 0; // Shift left by 5px on About page
 
@@ -24,10 +28,10 @@ const Kaleidoscope = () => {
     const slices = 15;
     const mirror = true;
 
-    let img;
-    let pattern;
-    let offset = { x: 50, y: 10 };
-    let animationId;
+    let img: HTMLImageElement;
+    let pattern: CanvasPattern | null;
+    const offset = { x: 50, y: 10 };
+    let animationId: number | undefined;
 
     const handleClick = () => {
       offset.x = 0;
@@ -37,14 +41,14 @@ const Kaleidoscope = () => {
     const handleResize = () => {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-      const isAboutPage = location.pathname === "/about";
+      const isAboutPage = pathname === "/about";
       const centerOffsetY = isAboutPage ? -100 : 0;
       const centerOffsetX = isAboutPage ? -5 : 0;
       w2 = w / 2 + centerOffsetX;
       h2 = h / 2 + centerOffsetY;
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       offset.x += img.width * (e.movementX / w);
       offset.y += img.height * (e.movementY / h);
     };
@@ -52,16 +56,16 @@ const Kaleidoscope = () => {
     const loop = () => {
       ctx.clearRect(0, 0, w, h);
 
-      let radius = w2 + h2;
-      let deltaAngle = PI2 / slices;
+      const radius = w2 + h2;
+      const deltaAngle = PI2 / slices;
 
-      let x = [
+      const x = [
         -1,
         -1 /*radius * sin(0)*/,
         radius * sin(deltaAngle),
         radius * sin(deltaAngle / 2),
       ];
-      let y = [
+      const y = [
         -1,
         radius /*radius * cos(0)*/,
         radius * cos(deltaAngle),
@@ -78,7 +82,7 @@ const Kaleidoscope = () => {
         ctx.lineTo(x[1] - offset.x, y[1] - offset.y);
         ctx.lineTo(x[2] - offset.x, y[2] - offset.y);
         ctx.lineTo(x[0] - offset.x, y[0] - offset.y);
-        ctx.fillStyle = pattern;
+        ctx.fillStyle = pattern as CanvasPattern;
         ctx.fill();
         ctx.resetTransform();
 
@@ -93,7 +97,7 @@ const Kaleidoscope = () => {
           ctx.lineTo(x[1] - offset.x, y[1] - offset.y);
           ctx.lineTo(x[3] - offset.x, y[3] - offset.y);
           ctx.lineTo(x[0] - offset.x, y[0] - offset.y);
-          ctx.fillStyle = pattern;
+          ctx.fillStyle = pattern as CanvasPattern;
           ctx.fill();
 
           ctx.resetTransform();
@@ -135,7 +139,7 @@ const Kaleidoscope = () => {
         cancelAnimationFrame(animationId);
       }
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <canvas

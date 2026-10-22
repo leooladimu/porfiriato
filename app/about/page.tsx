@@ -1,12 +1,20 @@
-import "./About.css";
+import { pageMetadata } from "@/lib/metadata";
 
-const About = () => {
+export const metadata = pageMetadata({
+  title: "About | Leo Ọládimú",
+  description:
+    "Leo Ọládimú is a full-stack and AI engineer who trained at MIT, builds production SaaS with Next.js, TypeScript and the Anthropic API, and works with small businesses.",
+  path: "/about",
+});
+
+export default function About() {
   return (
     <div className="page-content">
       <div className="page-hero">
         <h1>About Me</h1>
 
         <div className="about-header">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/profile-about.jpeg"
             alt="Leo Ọládimú"
@@ -19,17 +27,18 @@ const About = () => {
           <div className="about-section">
             <h2>Background</h2>
             <p>
-              I'm Leo Ọládimú, a developer and designer who's passionate about
-              creating elegant digital experiences. My work sits at the
-              intersection of technology, art, and human connection. My path to
-              software engineering has been unconventional. I've lived a life
+              I&apos;m Leo Ọládimú, a full-stack and AI engineer who builds
+              production SaaS and AI features, from the database to the
+              interface. I work with small businesses and teams who need
+              software that holds up under real use. My path to
+              software engineering has been unconventional. I&apos;ve lived a life
               that taught me about resilience, consequence, and the power of
               second chances—lessons that shape how I approach problem-solving
               and collaboration. After making the decision to rebuild my life
               from the ground up, I pursued technical training at MIT and
-              discovered that code offers something I'd been searching for: the
+              discovered that code offers something I&apos;d been searching for: the
               ability to create something meaningful that impacts real people. I
-              bring a perspective most developers don't—I understand what it
+              bring a perspective most developers don&apos;t—I understand what it
               means to start over, to prove yourself when the odds are stacked
               against you, and to commit fully to a new direction. That hunger
               and discipline drive everything I build.
@@ -37,19 +46,19 @@ const About = () => {
           </div>
 
           <div className="about-section">
-            <h2>Skills & Expertise</h2>
+            <h2>Skills &amp; Expertise</h2>
             <div className="skills-grid">
               <div className="skill-card">
-                <h3>Development</h3>
-                <p> Next.js, TypeScript, MERN</p>
+                <h3>Full-Stack</h3>
+                <p>Next.js, React, TypeScript, Node, PostgreSQL, Prisma</p>
               </div>
               <div className="skill-card">
-                <h3>Design</h3>
-                <p>UI/UX, Visual Design, Animation</p>
+                <h3>AI Engineering</h3>
+                <p>Anthropic API, validation, retries, cost controls</p>
               </div>
               <div className="skill-card">
-                <h3>Creative</h3>
-                <p>Generative Art, Interactive Media</p>
+                <h3>Product &amp; Delivery</h3>
+                <p>Clerk, Stripe, Vercel, Fly, React Native / Expo</p>
               </div>
             </div>
           </div>
@@ -67,6 +76,4 @@ const About = () => {
       </div>
     </div>
   );
-};
-
-export default About;
+}

@@ -1,14 +1,15 @@
-import { useState } from "react";
-import "./Contact.css";
+"use client";
 
-const Contact = () => {
+import { useState } from "react";
+
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/contact", {
@@ -25,12 +26,14 @@ const Contact = () => {
         const data = await response.json();
         alert(data.error || "Failed to send message. Please try again later.");
       }
-    } catch (error) {
+    } catch {
       alert("Failed to send message. Please try again later.");
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -44,9 +47,9 @@ const Contact = () => {
 
         <div className="contact-container">
           <div className="contact-info">
-            <h2>Let's Connect</h2>
+            <h2>Let&apos;s Connect</h2>
             <p>
-              Have a project in mind or just want to say hello? I'd love to hear
+              Have a project in mind or just want to say hello? I&apos;d love to hear
               from you.
             </p>
 
@@ -67,7 +70,7 @@ const Contact = () => {
                     GitHub
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/leo-oladimu/"
+                    href="https://www.linkedin.com/in/oleodev/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -108,7 +111,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 name="message"
-                rows="6"
+                rows={6}
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -123,6 +126,4 @@ const Contact = () => {
       </div>
     </div>
   );
-};
-
-export default Contact;
+}

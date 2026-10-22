@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
-import "./WebDevArticle.css";
+import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
 
-const WebDevArticle = () => {
+export const metadata = pageMetadata({
+  title: "Why Web Development Is the Foundation of Your Business | Leo Ọládimú",
+  description:
+    "Why solid web development drives SEO, speed and trust for small businesses, and how a custom-built site outperforms templates, from a Hi-Desert developer.",
+  path: "/resources/web-development",
+});
+
+export default function WebDevArticle() {
   return (
     <div className="page-content">
       <div className="page-hero" style={{ textAlign: "center" }}>
@@ -92,7 +99,7 @@ const WebDevArticle = () => {
           <div className="sidebar-cta">
             <h3>Ready to build something great?</h3>
             <p>Based in Wonder Valley. Serving the Hi-Desert and beyond.</p>
-            <Link to="/contact" className="article-btn">Get in touch</Link>
+            <Link href="/contact" className="article-btn">Get in touch</Link>
           </div>
         </aside>
       </div>
@@ -103,11 +110,9 @@ const WebDevArticle = () => {
           <p>
             Ready to move beyond templates and build something that actually works for your business? Let's talk.
           </p>
-          <Link to="/contact" className="article-btn-primary">Contact me today</Link>
+          <Link href="/contact" className="article-btn-primary">Contact me today</Link>
         </div>
       </section>
     </div>
   );
-};
-
-export default WebDevArticle;
+}

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #1a1a2e;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  color: rgba(255, 255, 255, 0.87);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+}
+
+/* Darkens the kaleidoscope so text leads */
+.kaleidoscope-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(26, 26, 46, 0.72) 0%,
+    rgba(26, 26, 46, 0.55) 70%
+  );
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.site-footer a {
+  color: rgba(255, 215, 0, 0.8);
+  text-decoration: underline;
+}

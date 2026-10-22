@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import "./Navigation.css";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
@@ -10,16 +9,15 @@ const Navigation = () => {
           alt="Leo Ọládimú"
           className="nav-avatar"
         />
-        <Link to="/" className="nav-logo">
+        <Link href="/" className="nav-logo">
           Leo Ọládimú
         </Link>
       </div>
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/work">Recent Work</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/resources/web-development">Why SEO Matters</Link>
+        <Link href="/">Home</Link>
+        <Link href="/work">Work</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
       </div>
     </nav>
   );

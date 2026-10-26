@@ -1,6 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+// Minimal typing for the parts of Cloudflare's Turnstile API we use.
+type TurnstileApi = {
+  render: (
+    container: HTMLElement,
+    options: {
+      sitekey: string;
+      appearance: "interaction-only";
+      callback: (token: string) => void;
+      "expired-callback": () => void;
+      "error-callback": () => void;
+    },
+  ) => string;
+  reset: (widgetId: string) => void;
+};
+declare global {
+  interface Window {
+    turnstile?: TurnstileApi;
+  }
+}
+
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const TURNSTILE_SRC =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,15 +33,89 @@ export default function ContactForm() {
     message: "",
   });
 
+  // Signed "when was this form rendered" token from the server. The server
+  // rejects submissions that arrive too fast or too late after it was issued.
+  const formToken = useRef("");
+  const turnstileToken = useRef("");
+  const turnstileContainer = useRef<HTMLDivElement>(null);
+  const turnstileWidget = useRef<string | null>(null);
+
+  const loadFormToken = useCallback(async () => {
+    try {
+      const res = await fetch("/api/contact/token", { cache: "no-store" });
+      const data = await res.json();
+      formToken.current = typeof data.token === "string" ? data.token : "";
+    } catch {
+      formToken.current = "";
+    }
+  }, []);
+
+  useEffect(() => {
+    loadFormToken();
+  }, [loadFormToken]);
+
+  // Turnstile runs in interaction-only mode: invisible unless Cloudflare
+  // decides a visitor needs to be challenged.
+  useEffect(() => {
+    if (!SITE_KEY) return;
+
+    const mount = () => {
+      const container = turnstileContainer.current;
+      if (!window.turnstile || !container || turnstileWidget.current) return;
+      turnstileWidget.current = window.turnstile.render(container, {
+        sitekey: SITE_KEY,
+        appearance: "interaction-only",
+        callback: (token) => {
+          turnstileToken.current = token;
+        },
+        "expired-callback": () => {
+          turnstileToken.current = "";
+        },
+        "error-callback": () => {
+          turnstileToken.current = "";
+        },
+      });
+    };
+
+    if (window.turnstile) {
+      mount();
+      return;
+    }
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${TURNSTILE_SRC}"]`,
+    );
+    if (!script) {
+      script = document.createElement("script");
+      script.src = TURNSTILE_SRC;
+      script.async = true;
+      document.head.appendChild(script);
+    }
+    script.addEventListener("load", mount);
+    return () => script.removeEventListener("load", mount);
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Honeypot: real people never see this field, so it is empty for them.
+    const website = String(new FormData(e.currentTarget).get("website") ?? "");
+
+    if (SITE_KEY && !turnstileToken.current) {
+      alert("Still verifying you're human. Please try again in a moment.");
+      return;
+    }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website,
+          formToken: formToken.current,
+          turnstileToken: turnstileToken.current,
+        }),
       });
       if (response.ok) {
         alert("Thank you for your message! I'll get back to you soon.");
@@ -28,6 +126,14 @@ export default function ContactForm() {
       }
     } catch {
       alert("Failed to send message. Please try again later.");
+    } finally {
+      // Turnstile tokens are single-use and the render token should restart
+      // its clock, so refresh both for any follow-up message.
+      turnstileToken.current = "";
+      if (window.turnstile && turnstileWidget.current) {
+        window.turnstile.reset(turnstileWidget.current);
+      }
+      loadFormToken();
     }
   };
 
@@ -82,6 +188,19 @@ export default function ContactForm() {
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            {/* Honeypot: off-screen and hidden from assistive tech. Bots fill
+                it in; people can't reach it. */}
+            <div className="hp-field" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -117,6 +236,8 @@ export default function ContactForm() {
                 required
               ></textarea>
             </div>
+
+            <div ref={turnstileContainer} />
 
             <button type="submit" className="submit-btn">
               Send Message

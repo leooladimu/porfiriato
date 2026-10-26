@@ -134,3 +134,14 @@
     font-size: 1.5rem;
   }
 }
+
+/* Spam honeypot: positioned off-screen rather than display:none, because
+   many bots skip fields that are display:none or type=hidden. */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

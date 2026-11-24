@@ -73,8 +73,7 @@ export default function Home() {
         <h1>Leo Ọládimú</h1>
         <p className="subtitle">Full-Stack &amp; AI Engineer</p>
         <p className="bio">
-          I build production SaaS and AI features that work on the thousandth
-          request, not just the demo. Next.js · TypeScript · Anthropic API.
+          I build production SaaS and AI features. Next.js · TypeScript · Anthropic API.
         </p>
         <div className="links">
           <Link href="/work" className="primary">
